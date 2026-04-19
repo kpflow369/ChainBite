@@ -9,7 +9,7 @@ import DAOABI from '../contracts/FoodGovernanceDAO.json';
  * Hook for all ChainBite contract interactions
  */
 export const useChainBite = () => {
-  const { writeContract, writeContractAsync, data: hash, error, isPending } = useWriteContract();
+  const { writeContractAsync, data: hash, error, isPending } = useWriteContract();
 
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
     hash,
