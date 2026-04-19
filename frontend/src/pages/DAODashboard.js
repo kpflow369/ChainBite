@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useChainBite } from '../hooks/useChainBite';
 import { useAccount } from 'wagmi';
 import { toast } from 'sonner';
-import { AlertCircle, CheckCircle2, XCircle, TrendingUp, Plus, Info, LayoutDashboard, Home, Search as SearchIcon, ShoppingBag, User, Landmark } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { AlertCircle, CheckCircle2, XCircle, TrendingUp, Home, Search as SearchIcon, ShoppingBag, User, Landmark } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 
 const DUMMY_PROPOSALS = {
@@ -22,7 +22,7 @@ const ProposalCard = ({ id, onVote }) => {
   if (isLoading) return <div className="dao-card skeleton">Loading...</div>;
   if (!proposalRaw || isError) return null;
 
-  const [propId, yesVotes, noVotes, endTime, executed] = proposalRaw;
+  const [,yesVotes, noVotes, endTime, executed] = proposalRaw;
   const yesCount = Number(yesVotes);
   const noCount = Number(noVotes);
   const totalVotes = yesCount + noCount;
@@ -91,15 +91,10 @@ const ProposalCard = ({ id, onVote }) => {
 };
 
 const DAODashboard = () => {
-  const navigate = useNavigate();
-  const { isConnected, address } = useAccount();
-  const { createDAOProposal, voteDAO } = useChainBite();
+  const { isConnected } = useAccount();
+  const { voteDAO } = useChainBite();
   const { cartCount } = useCart();
-  
-  const [activeIds, setActiveIds] = useState([1, 2, 3]);
-  const [isCreating, setIsCreating] = useState(false);
-  const [newTitle, setNewTitle] = useState("");
-  const [newDesc, setNewDesc] = useState("");
+  const [activeIds] = useState([1, 2, 3]);
 
   const handleVote = async (id, support) => {
     if (!isConnected) {
@@ -116,31 +111,7 @@ const DAODashboard = () => {
     );
   };
 
-  const handleCreate = async () => {
-    if (!newTitle.trim()) return toast.error("Title is required");
-    
-    setIsCreating(true);
-    try {
-      const nextId = activeIds.length + 1; // Simplistic approximation for UI
-      localStorage.setItem(`dao_prop_${nextId}_title`, newTitle);
-      localStorage.setItem(`dao_prop_${nextId}_desc`, newDesc);
-      
-      await createDAOProposal();
-      toast.success("Proposal submitted to chain!");
-      
-      setTimeout(() => {
-        setActiveIds([nextId, ...activeIds]);
-        setNewTitle("");
-        setNewDesc("");
-        setIsCreating(false);
-      }, 3000);
-      
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to submit proposal");
-      setIsCreating(false);
-    }
-  };
+
 
   return (
     <div className="page-container dao-page">

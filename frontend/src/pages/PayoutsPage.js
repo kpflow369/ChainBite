@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, DollarSign, ArrowUpRight, ArrowDownRight, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, DollarSign, ArrowUpRight, ArrowDownRight, CheckCircle2 } from 'lucide-react';
 import { useWallet } from '../contexts/WalletContext';
 import { toast } from 'sonner';
 

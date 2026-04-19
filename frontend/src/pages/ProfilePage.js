@@ -8,7 +8,7 @@ import { Button } from '../components/ui/button';
 import { toast } from 'sonner';
 import { useAccount } from 'wagmi';
 import { useChainBite, ROLES } from '../hooks/useChainBite';
-import { formatEther } from 'viem';
+
 
 const ProfilePage = () => {
   const navigate = useNavigate();
