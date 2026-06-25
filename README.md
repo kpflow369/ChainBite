@@ -1,49 +1,68 @@
-````markdown
+<div align="center">
+
 # 🍔 ChainBite
 
-> A decentralized Web3-powered food delivery platform that enables secure food ordering and blockchain-based payments using Ethereum smart contracts.
+### A Decentralized Web3-Powered Food Delivery Platform
+
+Secure food ordering powered by **Ethereum Smart Contracts**, **React**, and **Hardhat**.
+
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)]()
+[![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity)]()
+[![Hardhat](https://img.shields.io/badge/Hardhat-F7DF1E?style=for-the-badge)]()
+[![Ethereum](https://img.shields.io/badge/Ethereum-627EEA?style=for-the-badge&logo=ethereum)]()
+
+📹 **Project Demo**
+
+https://drive.google.com/file/d/1AhTRspGGgumu04yjDq1bw7bLNqyWe_eS/view?usp=drivesdk
+
+</div>
+
+---
 
 # 📖 Overview
 
-ChainBite bridges the gap between everyday convenience and Web3 technology.
+ChainBite is a decentralized food delivery platform built on Web3 technologies that combines the convenience of modern food ordering with the transparency and security of blockchain.
 
-Traditional food delivery platforms rely on centralized, opaque payment gateways and high intermediary fees. ChainBite disrupts this model by utilizing Ethereum smart contracts to facilitate trustless, secure, and fully auditable peer-to-peer transactions directly between consumers and restaurants.
+Unlike traditional delivery platforms that rely on centralized payment gateways and intermediaries, ChainBite utilizes Ethereum smart contracts to facilitate secure, trustless, and transparent transactions directly between customers and restaurants.
 
-By decentralizing the ordering pipeline, ChainBite ensures:
+### ✨ Key Highlights
 
-- 🔒 Tamper-proof transaction histories
-- ⚡ Automated payment distribution
-- 🛡️ Enhanced cryptographic security
-- 🌐 Transparent blockchain-powered ordering
+- 🔒 Tamper-proof transaction history
+- ⚡ Instant blockchain-powered payments
+- 🛡️ Wallet-based authentication
+- 🌐 Transparent order management
+- ⛓️ Smart contract automation
 
 ---
 
 # ✨ Features
 
-## 👤 Customer App
+## 👤 Customer Features
 
-- 🔐 **Web3 Authentication** – Passwordless login secured via MetaMask wallet.
-- 🍽️ **Restaurant Marketplace** – Browse restaurants and explore menus.
-- 🛒 **Cart & Checkout** – Build orders with blockchain-secured payments.
-- 📜 **Order History** – View immutable on-chain payment and order records.
-
----
-
-## 🍽️ Restaurant Portal
-
-- 📋 Manage food listings
-- ✏️ Add, update, and remove dishes
-- 📦 Receive and manage customer orders
-- 💰 Instant blockchain-based wallet settlements
+- 🔐 MetaMask Wallet Authentication
+- 🍽️ Browse Restaurants & Menus
+- 🛒 Add Items to Cart
+- 💳 Secure Blockchain Checkout
+- 📜 Immutable Order History
 
 ---
 
-## ⛓️ Blockchain Layer
+## 🍽️ Restaurant Features
 
-- Smart Contract Escrow Payments
+- 📋 Manage Food Listings
+- ✏️ Add, Update & Remove Dishes
+- 📦 Track Incoming Orders
+- 💰 Receive Instant Wallet Payments
+
+---
+
+## ⛓️ Blockchain Features
+
+- Smart Contract Escrow
 - Immutable Order Records
-- Secure Wallet Transactions
-- Standards-Compliant Smart Contracts
+- Secure Ethereum Transactions
+- OpenZeppelin Smart Contracts
+- Trustless Payment Processing
 
 ---
 
@@ -51,22 +70,20 @@ By decentralizing the ordering pipeline, ChainBite ensures:
 
 ## Frontend
 
-| Technology | Description |
-|------------|-------------|
-| React.js | Component-based UI framework |
-| Vite | Lightning-fast frontend tooling |
-| Tailwind CSS | Utility-first CSS framework |
-| Ethers.js | Ethereum client library |
+| Technology | Purpose |
+|------------|---------|
+| React.js | User Interface |
+| Vite | Frontend Build Tool |
+| Tailwind CSS | Styling |
+| Ethers.js | Blockchain Interaction |
 
----
+## Backend & Blockchain
 
-## Smart Contracts & Backend
-
-| Technology | Description |
-|------------|-------------|
-| Solidity | Smart contract programming language |
-| Hardhat | Development & testing framework |
-| OpenZeppelin | Secure contract libraries |
+| Technology | Purpose |
+|------------|---------|
+| Solidity | Smart Contracts |
+| Hardhat | Development Environment |
+| OpenZeppelin | Secure Contract Library |
 
 ---
 
@@ -91,7 +108,7 @@ ChainBite
 │   └── package.json
 │
 └── README.md
-````
+```
 
 ---
 
@@ -99,11 +116,9 @@ ChainBite
 
 ## 📋 Prerequisites
 
-Before getting started, ensure you have:
-
-* Node.js (v18 or later)
-* npm
-* MetaMask browser extension
+- Node.js (v18+)
+- npm
+- MetaMask Browser Extension
 
 ---
 
@@ -119,20 +134,17 @@ cd ChainBite
 
 ## 2️⃣ Configure Environment Variables
 
-Navigate to the backend directory.
-
 ```bash
 cd backend
+
 cp .env.example .env
 ```
 
-Update the `.env` file:
+Update your `.env` file:
 
 ```env
 PRIVATE_KEY=YOUR_PRIVATE_KEY
-
 RPC_URL=YOUR_RPC_ENDPOINT
-
 ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
 ```
 
@@ -140,25 +152,25 @@ ETHERSCAN_API_KEY=YOUR_ETHERSCAN_API_KEY
 
 ## 3️⃣ Backend Setup
 
-Install dependencies:
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Compile contracts:
+Compile contracts
 
 ```bash
 npx hardhat compile
 ```
 
-Run a local blockchain:
+Run a local blockchain
 
 ```bash
 npx hardhat node
 ```
 
-Deploy contracts:
+Deploy contracts
 
 ```bash
 npx hardhat run scripts/deploy.js --network localhost
@@ -176,7 +188,7 @@ npm install
 npm run dev
 ```
 
-Open:
+Visit:
 
 ```
 http://localhost:5173
@@ -186,20 +198,20 @@ http://localhost:5173
 
 # 🔒 Smart Contracts
 
-ChainBite leverages Solidity smart contracts to manage the core ordering and payment lifecycle.
+ChainBite leverages Solidity smart contracts to automate and secure the food ordering lifecycle.
 
-The contracts provide:
+### Core Capabilities
 
-* ✅ Secure blockchain payments
-* ✅ Escrow-based transaction handling
-* ✅ Immutable order records
-* ✅ Trustless verification mechanisms
+- ✅ Secure Blockchain Payments
+- ✅ Escrow-Based Transactions
+- ✅ Immutable Order Records
+- ✅ Trustless Verification
 
 ---
 
 # 🧪 Testing
 
-Run the smart contract test suite:
+Run the complete smart contract test suite.
 
 ```bash
 cd backend
@@ -213,20 +225,15 @@ npx hardhat test
 
 Watch the complete walkthrough of ChainBite here:
 
-📹 **Google Drive**
-
-https://drive.google.com/file/d/1AhTRspGGgumu04yjDq1bw7bLNqyWe_eS/view?usp=drivesdk
+🔗 https://drive.google.com/file/d/1AhTRspGGgumu04yjDq1bw7bLNqyWe_eS/view?usp=drivesdk
 
 ---
 
-
 # 🌟 Future Roadmap
 
-* [ ] Multi-chain interoperability (Polygon, Arbitrum)
-* [ ] Decentralized real-time order tracking
-* [ ] NFT-based customer loyalty rewards
-* [ ] DAO governance for restaurant onboarding
-* [ ] AI-powered food recommendations
-* [ ] Mobile application support
-
-```
+- [ ] Multi-chain Support (Polygon, Arbitrum)
+- [ ] Decentralized Real-Time Order Tracking
+- [ ] NFT-Based Loyalty Rewards
+- [ ] DAO Governance
+- [ ] AI-Powered Food Recommendations
+- [ ] Mobile Application
