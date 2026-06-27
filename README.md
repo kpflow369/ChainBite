@@ -125,7 +125,7 @@ ChainBite
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yashithac618/ChainBite.git
+git clone https://github.com/kpflow369/ChainBite.git
 
 cd ChainBite
 ```
